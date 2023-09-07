@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+//Aqui se puede escribir JS
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Space X Launches">
 	<main>
 		<svg
 			class="astro-a"
@@ -64,6 +66,7 @@ import Card from '../components/Card.astro';
 </Layout>
 
 <style>
+	/* Estos estilos tienen SCOPE! */
 	main {
 		margin: auto;
 		padding: 1rem;
