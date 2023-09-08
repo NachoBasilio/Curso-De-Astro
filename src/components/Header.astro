@@ -4,7 +4,7 @@ import HeaderButton from "./HeaderButton.astro";
 ---
 
 
-<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+<header transition:persist class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
     <div class="mx-auto text-center mb-8 lg:mb-16">
         <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
             SpaceX Lounches 🚀
@@ -17,7 +17,8 @@ import HeaderButton from "./HeaderButton.astro";
     <Counter client:visible/>
 
     <nav class="flex flex-col items-center justify-between w-full text-center md:flex-row">
-        <HeaderButton class="text-white" href="/">
+
+        <HeaderButton href="/">
             <svg slot="antes-del-texto" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
@@ -27,7 +28,7 @@ import HeaderButton from "./HeaderButton.astro";
             Ultimos lanzamientos
         </HeaderButton>
 
-        <HeaderButton  href="/about" class="text-white">
+        <HeaderButton href="/about">
             <svg slot="antes-del-texto" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M19.875 6.27c.7 .398 1.13 1.143 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z"></path>
@@ -37,7 +38,7 @@ import HeaderButton from "./HeaderButton.astro";
             Sobre el proyecto
         </HeaderButton>
 
-        <HeaderButton class="text-white" href="/oldest">
+        <HeaderButton  href="/">
             <svg slot="antes-del-texto" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M4 13c.325 2.532 1.881 4.781 4 6"></path>
