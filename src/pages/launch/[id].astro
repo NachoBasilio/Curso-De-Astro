@@ -4,6 +4,7 @@ import { type Doc, type APISpaceXResponse} from "../../types/api"
 
 import Layout from "../../layouts/Layout.astro"
 
+export const prerender = false
 
 const {id} = Astro.params
 let launch 
@@ -17,15 +18,36 @@ if(id){
 
 
 
-
-
+const successText = launch.success ? 'Exito' : 'Fallo'
 ---
 
 <Layout title=`Lanzamiento ${id}`>
     <article>
-        {
-            launch?.id
-        }
+        <picture class="flex justify-center p-4">
+            <img src={launch.links.patch.small} alt={`Patc for launch ${id}`} class="mb-5 rounded-lg">
+        </picture>
+    
+        <header class="p-4 flex-grow">
+            <span
+                class:list={
+                    [
+                        "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded",
+                        {
+                            "bg-green-500 text-green-100": launch.success,
+                            "bg-red-500 text-red-100": !launch.success
+                        }
+                    ]
+                }
+            >{successText}</span>
+        </header>
+    
+        <h2 class="my-2 text-2xl font-bold tracking-tight text-white">
+            Flight #{launch.flight_number}
+        </h2>
+    
+        <p class="mb-4 font-light text-gray-400">
+            {launch.details}
+        </p>
     </article>
 
 </Layout>
